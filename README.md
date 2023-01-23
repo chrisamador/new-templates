@@ -15,7 +15,7 @@ Local
 
 NPM
 
-Coming Soon
+`yarn add new-templates`
 
 ---
 
