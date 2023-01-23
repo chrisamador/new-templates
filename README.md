@@ -68,7 +68,7 @@ The `index.ts`, `provider.tsx`, `common/get-user.ts` files were copied.
 ## Config.json
 The config.json file defines the template configuration used when `yarn new` is ran. 
 ```
-config.json
+// config.json
 {
     id: string;
     templateVariables: {
@@ -114,3 +114,63 @@ An optional object that contains defaults
 **templateDefaults.fileLocation:** `string`
 
 A default file path location that the template will be generated to. The file path needs to be relative to the package.json file in the project.
+
+
+**Example Config.json**
+
+```
+{
+  "id": "context",
+  "templateVariables": [
+    {
+      "name": "Context Name",
+      "variableTextInTheTemplate": "Base",
+      "helpMessage": "What is the name of the Context?",
+      "default": "Context"
+    }
+  ],
+  "templateDefaults": {
+    "fileLocation": "src/context/"
+  }
+}
+```
+
+**How the variable replacement works**
+
+The `variableTextInTheTemplate` string is found in each file and replaced with the string entered when running `yarn new,` for example, take the following config.json and file.
+
+```
+// .template/example/config.json
+{
+  ...
+  "templateVariables": [
+    {
+      ...
+      "variableTextInTheTemplate": "Base",
+                                    ~~~~ <--- string to be searched
+      ...
+    }
+  ]
+}
+```
+```
+// .template/example/src/index.tsx
+export function BaseComponent(){
+                ~~~~ <--- string that will be replace
+    return (
+        <div/>
+    )
+}
+```
+
+When `yarn new` is ran and the string "Super" is used for the template variable, the following file is generated.
+
+```
+// src/new/path/index.tsx
+export function SuperComponent(){
+                ~~~~~ <--- string that was entered
+    return (
+        <div/>
+    )
+}
+```
