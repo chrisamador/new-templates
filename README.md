@@ -1,9 +1,9 @@
 # New Templates
-Generate boilerplate code from project-base templates.
+Generate boilerplate code from project-based templates.
 
 **Example use case**
 
-Create consistent React Components based off your team's code patterns
+Create consistent React Components based on your team's code patterns
 
 ---
 
@@ -21,15 +21,15 @@ Coming Soon
 
 ## Usage
 
-1. Create templates in a root level folder named `.templates`
-2. Run `yarn new` and follow the prompts to generating code base on your project's templates
+1. Create templates in a root-level folder named `.templates`
+2. Run `yarn new` and follow the prompts to generate code based on your project's templates
 
 ---
 
 ## How to create templates
-Create a folder called `.templates` at the root level of your project. In that folder you can create sub-folders for each template. A template requires two things to work properly. First is the `config.json` file at the root of the template. Second is the `src` folder which contains all the files and folders that are part of the template. 
+Create a folder called `.templates` at the root level of your project. In that folder, you can create sub-folders for each template. A template requires two things to work correctly. First is the `config.json` file at the root of the template. Second is the `src` folder which contains all the files and folders that are part of the template. 
 
-All the folders and files inside of `src` will be copied when the template is used. Note: Only the internal contents will be copied and not the `src` folder itself.
+All the folders and files inside of `src` will be copied when the template is used. Note: Only the internal contents will be copied, not the `src` folder itself.
 
 **Example folder structure**
 
@@ -47,7 +47,7 @@ package.json
 
 **Example use of a template**
 
-Selecting the above template and destination `src/app/contexts/user` will generate the following folder structure
+Selecting the above template and destination `src/app/contexts/user` will generate the following folder structure.
 
 ```
 src/
@@ -66,7 +66,7 @@ The `index.ts`, `provider.tsx`, `common/get-user.ts` files were copied.
 ---
 
 ## Config.json
-The config.json file defines the template configation that are used when `yarn new` is ran. 
+The config.json file defines the template configuration used when `yarn new` is ran. 
 ```
 config.json
 {
@@ -84,11 +84,11 @@ config.json
 ```
 **id:** `string`
 
-The name of the template that will be display for selection. Each name needs to be unique.
+The name of the template that will be displayed for selection. Each name needs to be unique.
 
 **templateVariables:** `array<templateVariable>`
 
-A template variable is a string found in the template files that is replaced with another string. They are useful to make your templates more dynamic. 
+A template variable is a string found in the template files that is replaced with another string. They are helpful in making your templates more dynamic. 
 
 **templateVariables.name:** `string`
 
@@ -96,11 +96,11 @@ The display name of the Variable when `yarn new` is ran.
 
 **templateVariables.variableTextToInTemplate:** `string`
 
-The string that is in the template which is to be replaced with a new string.
+The string in the template is to be replaced with a new string.
 
 **templateVariables.helpMessage:** `string`
 
-Helpful message to explain what the variable is how it should replaced
+Helpful message to explain what the variable is and how it should be replaced
 
 **templateVariables.default:** `string`
 
@@ -113,4 +113,4 @@ An optional object that contains defaults
 
 **templateDefaults.fileLocation:** `string`
 
-A default file path location that the template will be generate to. A the file path needs to be relative to the package.json file in the project.
+A default file path location that the template will be generated to. The file path needs to be relative to the package.json file in the project.
