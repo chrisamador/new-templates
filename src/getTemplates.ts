@@ -46,5 +46,11 @@ export async function getTemplates() {
     });
   });
 
+  if (!templates.length) {
+    throw new Error(
+      "Please add templates in a .templates folder at the root of your project"
+    );
+  }
+
   return templates;
 }

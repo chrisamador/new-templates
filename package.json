@@ -21,11 +21,10 @@
   },
   "scripts": {
     "start": "yarn tsc-watch",
-    "install": "esbuild ./src/index.ts --platform=node --bundle  --outfile=./dist/index.js | node"
+    "install": "esbuild ./src/index.ts --platform=node --bundle --outdir=./dist | node"
   },
   "bin": {
     "new": "./bin/new.js"
   },
-  "main": "./bin/new.js",
-  "type": "module"
+  "main": "./bin/new.js"
 }
