@@ -16,11 +16,12 @@
     "@types/mem-fs-editor": "^7.0.2",
     "@types/node": "^18.11.18",
     "@types/prompts": "^2.4.2",
+    "esbuild": "^0.19.2",
     "tsc-watch": "^6.0.0"
   },
   "scripts": {
     "start": "yarn tsc-watch",
-    "install": "yarn tsc"
+    "install": "esbuild ./src/index.ts --platform=node --bundle  --outfile=./dist/index.js | node"
   },
   "bin": {
     "new": "./bin/new.js"
